@@ -1,7 +1,7 @@
 import streamlit as st
-import navbar
-import home
-import contact
+import components.navbar as navbar
+import components.home as home
+import components.contact as contact
 
 # Load navigation bar
 page = navbar.navbar()
