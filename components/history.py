@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np 
+import firebase_admin 
+
+from firebase_admin import credentials
+from firebase_admin import auth
+
+cred = credentials.Certificate('emotionalDamage/makeuoft-c360d-679e8029ef77.json')
+firebase_admin.initialize_app(cred)
+
 
 def show():
     st.title("📊 Mood History")
