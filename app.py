@@ -1,5 +1,5 @@
 import streamlit as st
-from components import navbar, happiness_show, history_show, contact_show, about_show
+from components import navbar, happiness_show, history_show, about_show
 
 # Load navbar
 page = navbar()
