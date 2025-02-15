@@ -30,7 +30,7 @@ def navbar():
     st.markdown(
         """
         <div class="navbar">
-            <a href="?page=Home">😊 Happiness</a>
+            <a href="?page=Happiness">😊 Happiness</a>
             <a href="?page=History">📖 History</a>
             <a href="?page=About">ℹ️ About</a>
         </div>
@@ -39,4 +39,4 @@ def navbar():
     )
 
     # Sidebar navigation as a fallback
-    return st.sidebar.radio("Go to", ["Home", "About", "Contact"])
+    return st.sidebar.radio("Go to", ["Happiness", "History", "About"])
