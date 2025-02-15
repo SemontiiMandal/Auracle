@@ -1,13 +1,13 @@
 import streamlit as st
-import components.navbar as navbar
-import components.home as home
-import components.contact as contact
+from components import navbar, home_show, about_show, contact_show
 
-# Load navigation bar
-page = navbar.navbar()
+# Load navbar
+page = navbar()
 
 # Display selected page
 if page == "Home":
-    home.show()
+    home_show()
+elif page == "About":
+    about_show()
 elif page == "Contact":
-    contact.show()
+    contact_show()
