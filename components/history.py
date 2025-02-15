@@ -1,8 +1,14 @@
 import streamlit as st
-
-
-
+import pandas as pd
+import numpy as np 
 
 def show():
-    st.title("📖 History Page")
-    st.write("This is the history page that shows the user's history of happiness levels.")
+    st.title("📊 Mood History")
+
+    # Simulate mood data
+    dates = pd.date_range(start="2024-04-01", periods=10)
+    moods = np.random.choice(["Happy", "Calm", "Sad", "Excited"], size=10)
+    df = pd.DataFrame({"Date": dates, "Mood": moods})
+
+    # Chart 
+    st.line_chart(df.set_index("Date"))
