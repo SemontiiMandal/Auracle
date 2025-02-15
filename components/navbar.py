@@ -1,16 +1,20 @@
 import streamlit as st
 
-def navbar(): 
+def navbar():
+    # Track the selected page
+    selected_page = st.sidebar.radio("Go to", ["Happiness", "History", "About"])
+
+    # Styling with highlight effect
     st.markdown(
-        """
+        f"""
         <style> 
-            .navbar {
-                background-color: 262730; 
+            .navbar {{
+                background-color: #262730; 
                 padding: 15px; 
                 border-radius: 10px; 
                 text-align: center; 
-            }
-            .navbar a {
+            }}
+            .navbar span {{
                 color: white; 
                 text-decoration: none; 
                 margin: 0 10px; 
@@ -18,25 +22,28 @@ def navbar():
                 font-size: 18px; 
                 margin: 5px; 
                 border-radius: 5px; 
-            }
-            .navbar a: hover {
-                background-color: white;
-                color: white   
-            }
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }}
+            .navbar .selected {{
+                background-color: #FF6F61;
+                color: white;
+                transform: scale(1.1);
+            }}
         </style>
         """, 
         unsafe_allow_html=True
     )
+
+    # Render the navbar with dynamic class for the selected span
     st.markdown(
-        """
+        f"""
         <div class="navbar">
-            <a href="?page=Happiness">😊 Happiness</a>
-            <a href="?page=History">📖 History</a>
-            <a href="?page=About">ℹ️ About</a>
+            <span class="{'selected' if selected_page == 'Happiness' else ''}">😊 Happiness</span>
+            <span class="{'selected' if selected_page == 'History' else ''}">📖 History</span>
+            <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>
         </div>
         """, 
         unsafe_allow_html=True
     )
 
-    # Sidebar navigation as a fallback
-    return st.sidebar.radio("Go to", ["Happiness", "History", "About"])
+    return selected_page
