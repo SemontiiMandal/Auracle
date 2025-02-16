@@ -10,7 +10,7 @@ else:
     page = navbar()
 
     # Display selected page
-    if page == "SongInfo":
+    if page == "Song Info":
         songInfo_show()
     elif page == "History":
         history_show()

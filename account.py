@@ -52,7 +52,7 @@ def sign_in_with_email_and_password(email, password):
         return False
 
 def app():
-    st.title('Welcome to :violet[Pondering] :sunglasses:')
+    st.title('Auracle Login Page 🌟')
 
     if "signedout" not in st.session_state:
         st.session_state["signedout"] = False
@@ -72,7 +72,6 @@ def app():
                 if sign_in_with_email_and_password(email, password):
                     st.rerun()
     else:
-        st.text(f'Welcome, {st.session_state["username"]}')
         if st.button('Sign out'):
             st.session_state.clear()
             st.rerun()
