@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 def show():
     st.title("🎵 Song Information")  # Showing the basic title
@@ -17,24 +18,22 @@ def show():
     # Upload your own WAV file
     st.subheader("Upload Your Own WAV")
     uploaded_file = st.file_uploader("Choose a WAV file", type=["wav"])
+    
     if uploaded_file is not None:
+        # Save the uploaded file to session state for playback
         st.session_state["current_song"] = uploaded_file
         st.session_state["audio_progress"] = 0
         st.session_state["audio_playing"] = False
-        st.success("Custom track uploaded!")
-
-    if uploaded_file is not None:
-    # Save uploaded file to local storage
-        save_path = os.path.join("temp_audio.wav")  # Saves in the current directory
+        
+        # Save the file temporarily on disk for playback
+        save_path = os.path.join("uploaded_audio.wav")
         with open(save_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
-    
-    st.session_state["audio_file_path"] = save_path
-    st.success(f"Custom track saved to: {save_path}")
-
-    # Play the uploaded file, using as an audio player    
-    st.audio(uploaded_file, format="audio/wav")
-
+        
+        st.success("Custom track uploaded!")
+        
+        # Play the uploaded file, using it as an audio player
+        st.audio(save_path, format="audio/wav")
 
 # Run the Streamlit app
 if __name__ == "__main__":
