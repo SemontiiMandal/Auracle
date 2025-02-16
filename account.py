@@ -5,7 +5,7 @@ import requests
 
 # Firebase credentials and initialization
 if not firebase_admin._apps:
-    cred = credentials.Certificate('makeuoft-c360d-f1b19351d4c8.json')
+    cred = credentials.Certificate('/Users/averylor/Desktop/makeUofT/emotionalDamage/makeuoft-c360d-b816b64042f8.json')
     firebase_admin.initialize_app(cred)
 
 # Helper function to check authentication
