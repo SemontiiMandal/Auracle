@@ -23,6 +23,15 @@ def show():
         st.session_state["audio_playing"] = False
         st.success("Custom track uploaded!")
 
+    if uploaded_file is not None:
+    # Save uploaded file to local storage
+        save_path = os.path.join("temp_audio.wav")  # Saves in the current directory
+        with open(save_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+    
+    st.session_state["audio_file_path"] = save_path
+    st.success(f"Custom track saved to: {save_path}")
+
     # Play the uploaded file, using as an audio player    
     st.audio(uploaded_file, format="audio/wav")
 
