@@ -67,7 +67,7 @@ def app():
             if st.button("Sign Up"):
                 if create_account(email, password):
                     st.rerun()
-        else:  # Login option
+        else:  # Login options
             if st.button("Login"):
                 if sign_in_with_email_and_password(email, password):
                     st.rerun()
