@@ -1,5 +1,5 @@
 import streamlit as st
-from components import navbar, songInfo_show, history_show, about_show
+from components import navbar, songInfo_show, history_show, about_show, dataPage_show
 import account
 
 # Ensure authentication before displaying anything else
@@ -18,3 +18,6 @@ else:
         account.app()
     elif page == "About":
         about_show()
+    elif page == "Data": 
+        dataPage_show()
+        
