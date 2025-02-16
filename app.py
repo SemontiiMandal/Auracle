@@ -1,5 +1,5 @@
 import streamlit as st
-from components import navbar, happiness_show, history_show, about_show
+from components import navbar, songInfo_show, history_show, about_show
 import account
 
 # Ensure authentication before displaying anything else
@@ -10,8 +10,8 @@ else:
     page = navbar()
 
     # Display selected page
-    if page == "Happiness":
-        happiness_show()
+    if page == "SongInfo":
+        songInfo_show()
     elif page == "History":
         history_show()
     elif page == "Account":

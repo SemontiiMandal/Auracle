@@ -38,7 +38,7 @@ def navbar():
     st.markdown(
         f"""
         <div class="navbar">
-            <span class="{'selected' if selected_page == 'Happiness' else ''}">😊 Happiness</span>
+            <span class="{'selected' if selected_page == 'SongInfo' else ''}">🎵 Music Information</span>
             <span class="{'selected' if selected_page == 'History' else ''}">📖 History</span>
             <span class="{'selected' if selected_page == 'Account' else ''}">👤 Account</span>
             <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>
