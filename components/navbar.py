@@ -40,8 +40,8 @@ def navbar():
         <div class="navbar">
             <span class="{'selected' if selected_page == 'Happiness' else ''}">😊 Happiness</span>
             <span class="{'selected' if selected_page == 'History' else ''}">📖 History</span>
-            <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>
             <span class="{'selected' if selected_page == 'Account' else ''}">👤 Account</span>
+            <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>
         </div>
         """, 
         unsafe_allow_html=True
