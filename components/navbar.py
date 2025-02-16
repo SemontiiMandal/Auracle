@@ -2,7 +2,7 @@ import streamlit as st
 
 def navbar():
     # Track the selected page
-    selected_page = st.sidebar.radio("Go to", ["Song Info", "History", "Account", "About", "Data"])
+    selected_page = st.sidebar.radio("Go to", ["History", "Account", "About", "Data"])
 
     # Styling with highlight effect
     st.markdown(
@@ -38,7 +38,6 @@ def navbar():
     st.markdown(
         f"""
         <div class="navbar">
-            <span class="{'selected' if selected_page == 'Song Info' else ''}">🎵 Song Information</span>
             <span class="{'selected' if selected_page == 'History' else ''}">📜 History</span>
             <span class="{'selected' if selected_page == 'Account' else ''}">👤 Account</span>
             <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>

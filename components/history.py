@@ -7,7 +7,7 @@ def show():
 
     # Simulate mood data
     dates = pd.date_range(start="2024-04-01", periods=10)
-    moods = np.random.choice(["Happy", "Calm", "Sad", "Excited"], size=10)
+    moods = np.random.choice(["Excited", "Happy", "Neutral", "Sad", "Serious Depression"], size=10)
     df = pd.DataFrame({"Date": dates, "Mood": moods})
 
     # Chart 

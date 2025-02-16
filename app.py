@@ -1,5 +1,5 @@
 import streamlit as st
-from components import navbar, songInfo_show, history_show, about_show, dataPage_show
+from components import navbar, history_show, about_show, dataPage_show
 import account
 
 # Ensure authentication before displaying anything else
