@@ -1,7 +1,6 @@
 import streamlit as st
 import firebase_admin
 from firebase_admin import credentials, auth
-import json
 import requests
 
 # Firebase credentials and initialization
@@ -13,41 +12,67 @@ if not firebase_admin._apps:
 def is_authenticated():
     return st.session_state.get("signedout", False)
 
+# Function to create an account
+def create_account(email, password):
+    rest_api_url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp"
+    try:
+        payload = {
+            "email": email,
+            "password": password,
+            "returnSecureToken": True
+        }
+        r = requests.post(rest_api_url, params={"key": "AIzaSyApr-etDzcGcsVcmaw7R7rPxx3A09as7uw"}, json=payload)
+        r.raise_for_status()
+        st.success("Account created successfully! Please log in.")
+        return True
+    except requests.exceptions.RequestException as e:
+        error_message = r.json().get("error", {}).get("message", "Unknown error")
+        st.warning(f"Signup failed: {error_message}")
+        return False
+
+# Function to sign in
+def sign_in_with_email_and_password(email, password):
+    rest_api_url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword"
+    try:
+        payload = {
+            "email": email,
+            "password": password,
+            "returnSecureToken": True
+        }
+        r = requests.post(rest_api_url, params={"key": "AIzaSyApr-etDzcGcsVcmaw7R7rPxx3A09as7uw"}, json=payload)
+        r.raise_for_status()
+        data = r.json()
+        st.session_state["signedout"] = True
+        st.session_state["username"] = data.get('displayName', email)
+        st.session_state["useremail"] = data['email']
+        return True
+    except requests.exceptions.RequestException as e:
+        error_message = r.json().get("error", {}).get("message", "Unknown error")
+        st.warning(f"Signin failed: {error_message}")
+        return False
+
 def app():
     st.title('Welcome to :violet[Pondering] :sunglasses:')
 
-    # Initialize session state variables
     if "signedout" not in st.session_state:
         st.session_state["signedout"] = False
 
-    def sign_in_with_email_and_password(email, password):
-        rest_api_url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword"
-        try:
-            payload = json.dumps({
-                "email": email,
-                "password": password,
-                "returnSecureToken": True
-            })
-            r = requests.post(rest_api_url, params={"key": "AIzaSyApr-etDzcGcsVcmaw7R7rPxx3A09as7uw"}, data=payload)
-            r.raise_for_status()  # Check for HTTP errors
-            data = r.json()
-            st.session_state["signedout"] = True
-            st.session_state["username"] = data.get('displayName', email)
-            st.session_state["useremail"] = data['email']
-            return True
-        except requests.exceptions.RequestException as e:
-            st.warning(f"Signin failed: {e}")
-            return False
-
     if not is_authenticated():
+        choice = st.radio("Choose an option:", ["Login", "Create Account"])
+
         email = st.text_input('Email Address')
         password = st.text_input('Password', type='password')
 
-        if st.button('Login'):
-            if sign_in_with_email_and_password(email, password):
-                st.experimental_rerun()  # Reload the app after successful login
+        if choice == "Create Account":
+            if st.button("Sign Up"):
+                if create_account(email, password):
+                    st.rerun()
+        else:  # Login option
+            if st.button("Login"):
+                if sign_in_with_email_and_password(email, password):
+                    st.rerun()
     else:
         st.text(f'Welcome, {st.session_state["username"]}')
         if st.button('Sign out'):
-            st.session_state.clear()  # Clear session and log out
-            st.experimental_rerun()
+            st.session_state.clear()
+            st.rerun()
