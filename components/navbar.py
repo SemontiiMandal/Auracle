@@ -39,7 +39,7 @@ def navbar():
         f"""
         <div class="navbar">
             <span class="{'selected' if selected_page == 'Song Info' else ''}">🎵 Song Information</span>
-            <span class="{'selected' if selected_page == 'History' else ''}">📖 History</span>
+            <span class="{'selected' if selected_page == 'History' else ''}">📜 History</span>
             <span class="{'selected' if selected_page == 'Account' else ''}">👤 Account</span>
             <span class="{'selected' if selected_page == 'About' else ''}">ℹ️ About</span>
             <span class="{'selected' if selected_page == 'Data' else ''}">📊 Data</span>
