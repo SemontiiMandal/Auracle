@@ -90,10 +90,4 @@ Think of it as a personalized, AI-powered Spotify—but without the price tag.
 
 ---
 
-## Why We Simulate the Inputs
-
-You may be wondering why we simulate the gyroscope inputs in Python (Colab) instead of integrating them into the front end.
-
-The reason is, since we’re manually recording voice commands, we simulate the interaction instead of using a physical Arduino voice recording module. Our users should be interacting with the AI models, but due to the absence of the ESP32 module, we manually initiate this interaction for now. Thus, the front end is kept simple and focused, showing the behind-the-scenes workings through the Python IDE.
-
 Thank you for checking out **Auracle**! 🚀
