@@ -61,13 +61,20 @@ I worked primarily on the **software side** of the project, contributing the fol
 
 ---
 
-## Installation Guide
+## Installation Guide for AI Music Generation 
 
 To run this project, you will need access to a **GPU**. We recommend using **Google Colab** to run the models. Follow these steps:
 
 1. Open the [Google Colab Notebook](<https://colab.research.google.com/drive/1xgslfFNHP8zBEcMYCUEm-MTWyNT89dnB?usp=sharing>) containing the installation and usage instructions.
 2. Go to Runtime > Change runtime type > Hardware Accelerator > select a GPU > Click Save
 3. Click on Runtime > Run All to start generating music based on your voice input and sentiment analysis; It might take around 5 mins to execute all cells. After the execution, you will be able to access the gradio frontend, using a live link generated which will be shown in the last cell.
+
+**Note:** 
+My other two notebooks, SpeechtoText.ipynb and TextSentimentAnalysis.ipynb won't need a GPU to run.
+
+Here are the Colab Notebooks:
+1. [Speech to Text Notebook] (<https://colab.research.google.com/drive/14u8gVqNKe6CaNpH9aTBWLG48sOmCwmxn?usp=sharing>)
+2. [Text Sentiment Analysis Notebook] (<https://colab.research.google.com/drive/1dp02dyOfmBp_ZZiiMEwgenU_IkJyDfqL?usp=sharing>)
 
 ---
 
