@@ -73,8 +73,8 @@ To run this project, you will need access to a **GPU**. We recommend using **Goo
 My other two notebooks, SpeechtoText.ipynb and TextSentimentAnalysis.ipynb won't need a GPU to run.
 
 Here are the Colab Notebooks:
-1. [Speech to Text Notebook] (<https://colab.research.google.com/drive/14u8gVqNKe6CaNpH9aTBWLG48sOmCwmxn?usp=sharing>)
-2. [Text Sentiment Analysis Notebook] (<https://colab.research.google.com/drive/1dp02dyOfmBp_ZZiiMEwgenU_IkJyDfqL?usp=sharing>)
+1. [Speech to Text Notebook](<https://colab.research.google.com/drive/14u8gVqNKe6CaNpH9aTBWLG48sOmCwmxn?usp=sharing>)
+2. [Text Sentiment Analysis Notebook](<https://colab.research.google.com/drive/1dp02dyOfmBp_ZZiiMEwgenU_IkJyDfqL?usp=sharing>)
 
 ---
 
