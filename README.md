@@ -2,12 +2,12 @@
 
 ## Introduction
 
+We are excited to introduce **Auracle**, a revolutionary wearable system that brings music control and generation to your fingertips—literally!
+
 Auracle was developed as part of MakeUofT 2025, a Major League Hacking (MLH) hackathon. It was built as a group project by a team of four members over an intense 24-hour development period. 🤝💡
 
 ## 🏆 Achievements
 Winner of the MLH 'Best Use of Gen AI' Prize at MakeUofT 2025! 🏅🚀
-
-We are excited to introduce **Auracle**, a revolutionary wearable system that brings music control and generation to your fingertips—literally!
 
 ---
 
