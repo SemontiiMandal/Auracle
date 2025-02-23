@@ -2,9 +2,12 @@
 
 ## Introduction
 
-Music has been a form of entertainment for many centuries, from the ancient Egyptians to the present day. It has transcended cultures and time, evolving alongside humanity. Early evidence of making music can be traced back to primitive tools and instruments, marking the beginning of human expression through sound. Today, music is celebrated as both an art form and a powerful tool, especially in modern science, such as music therapy.
+Auracle was developed as part of MakeUofT 2025, a Major League Hacking (MLH) hackathon. It was built as a group project by a team of four members over an intense 24-hour development period. 🤝💡
 
-Therefore, we are excited to introduce **Auracle**, a revolutionary wearable system that brings music control and generation to your fingertips—literally!
+## 🏆 Achievements
+Winner of the MLH 'Best Use of Gen AI' Prize at MakeUofT 2025! 🏅🚀
+
+We are excited to introduce **Auracle**, a revolutionary wearable system that brings music control and generation to your fingertips—literally!
 
 ---
 
@@ -34,23 +37,37 @@ Introducing **Auracle**—a wearable system that lets you control and generate m
 
 - **The Experience:** The generated music plays through the built-in speaker in the glasses, ensuring a seamless, immersive experience—no phone needed.
 
-- **Online User Interface/Full Stack App:** The user interface is built with Streamlit, and the backend is powered by Firebase. User data, including login information and listening moods, is stored and managed through the app. Users can input their voice messages via the website as well, which are processed by the application.
+- **Online User Interface/Full Stack App:** The user interface is built with Streamlit and Gradio, and the backend is powered by Firebase. User data, including login information and listening moods, is stored and managed through the app. Users can input their voice messages via the website as well, which are processed by the application.
 
 And the best part? You can regenerate the track endlessly until it perfectly matches your vibe.
 
 ---
+## My Contributions
 
-## Challenges We Overcame
+### My Role:
+I worked primarily on the **software side** of the project, contributing the following key components:
 
-Like any ambitious project, **Auracle** faced several obstacles:
+1. **Speech-to-Text Model** using HuggingFace:
+   - Convert spoken commands into text, allowing users to control the music via voice input.
 
-1. **ESP32 Module Unavailability:** We initially planned to use an ESP32 module to transfer data between our recorder and speaker. However, hardware constraints forced us to pivot to an ESP32-CAM module, which turned out to be defective. Despite reaching out to tech support, the issue remained unresolved. As a result, we had to simulate sensor data instead.
+2. **Generative AI Music Generator** using HuggingFace’s AudioLDM 2:
+   - Generate music based on user prompts, making each track unique and tailored to the user’s request.
 
-2. **Speaker but No Recorder:** While we acquired a speaker module, we couldn’t get a compatible voice recorder in time. Currently, we’re simulating voice input via a laptop microphone.
+3. **Text Sentiment Analysis** using TextBlob:
+   - Sentiment analysis model that detects the emotional tone of user input and sends that data to a realtime database (Firebase) and user's mood history is logged onto the web app.
 
-3. **Stretch Sensor Shortages:** Our initial design included stretch sensors for finer gesture detection, but due to stock shortages, we adapted by relying on gyroscope-based gestures instead.
+4. **Frontend Development with Gradio**:
+   - Designed Gradio frontends for each AI model, enabling users to interact with them directly for demonstration purposes during hackathon.
 
-Despite these setbacks, **Auracle** is functional—and more importantly, it lays the groundwork for an entirely new way of interacting with music.
+---
+
+## Installation Guide
+
+To run this project, you will need access to a **GPU**. We recommend using **Google Colab** to run the models. Follow these steps:
+
+1. Open the [Google Colab Notebook](<https://colab.research.google.com/drive/1xgslfFNHP8zBEcMYCUEm-MTWyNT89dnB?usp=sharing>) containing the installation and usage instructions.
+2. Go to Runtime > Change runtime type > Hardware Accelerator > select a GPU > Click Save
+3. Click on Runtime > Run All to start generating music based on your voice input and sentiment analysis; It might take around 5 mins to execute all cells. After the execution, you will be able to access the gradio frontend, using a live link generated which will be shown in the last cell.
 
 ---
 
@@ -63,14 +80,6 @@ Traditional music platforms like Spotify recommend songs based on your past pref
 - Unlike Spotify, **Auracle** is free!
 
 And as we expand, we plan to take it even further.
-
----
-
-## Future Scope
-
-- **Personalized Mood Dashboard:** We plan to introduce an ML model that tracks user prompt history to analyze mood trends over time. This could help identify mood swings, which are early indicators of stress, burnout, and mental health conditions.
-
-- **Expanding Beyond Music:** Imagine using **Auracle** to generate customized ambient sounds for sleep, meditation, or focus—tailored to your emotional state.
 
 ---
 
