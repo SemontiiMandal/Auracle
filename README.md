@@ -42,7 +42,7 @@ Introducing **Auracle**—a wearable system that lets you control and generate m
 And the best part? You can regenerate the track endlessly until it perfectly matches your vibe.
 
 ---
-## My Contributions
+## My Contributions (Gen AI folder in this repository)
 
 ### My Role:
 I worked primarily on the **software side** of the project, contributing the following key components:
